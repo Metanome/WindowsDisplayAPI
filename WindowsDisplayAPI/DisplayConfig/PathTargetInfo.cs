@@ -1,4 +1,4 @@
-﻿using WindowsDisplayAPI.Exceptions;
+using WindowsDisplayAPI.Exceptions;
 using WindowsDisplayAPI.Native.DisplayConfig;
 using WindowsDisplayAPI.Native.DisplayConfig.Structures;
 
@@ -143,6 +143,7 @@ namespace WindowsDisplayAPI.DisplayConfig
         {
             IsPathActive = pathFlags.HasFlag(DisplayConfigPathInfoFlags.Active);
             IsVirtualModeSupportedByPath = pathFlags.HasFlag(DisplayConfigPathInfoFlags.SupportVirtualMode);
+            IsBoostRefreshRate = pathFlags.HasFlag(DisplayConfigPathInfoFlags.BoostRefreshRate);
 
             DisplayTarget = new PathDisplayTarget(
                 new PathDisplayAdapter(targetInfo.AdapterId),
@@ -260,6 +261,11 @@ namespace WindowsDisplayAPI.DisplayConfig
         ///     Gets a boolean value that indicates if the path supports virtual mode
         /// </summary>
         public bool IsVirtualModeSupportedByPath { get; }
+
+        /// <summary>
+        ///     Gets a boolean value that indicates if the path supports dynamic refresh rate boosting
+        /// </summary>
+        public bool IsBoostRefreshRate { get; }
 
         /// <summary>
         ///     Gets the type of the display device connection

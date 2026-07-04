@@ -27,6 +27,11 @@ namespace WindowsDisplayAPI.Native.DisplayConfig
         /// <summary>
         ///     Virtual Mode Aware
         /// </summary>
-        VirtualModeAware = 0x0000010
+        VirtualModeAware = 0x00000010,
+
+        /// <summary>
+        ///     Virtual Refresh Rate Aware
+        /// </summary>
+        VirtualRefreshRateAware = 0x00000040
     }
 }

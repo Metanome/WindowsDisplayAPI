@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
@@ -463,7 +463,7 @@ namespace WindowsDisplayAPI.DisplayConfig
         {
             return GetPathInfos(
                 virtualModeAware
-                    ? QueryDeviceConfigFlags.OnlyActivePaths | QueryDeviceConfigFlags.VirtualModeAware
+                    ? QueryDeviceConfigFlags.OnlyActivePaths | QueryDeviceConfigFlags.VirtualModeAware | QueryDeviceConfigFlags.VirtualRefreshRateAware
                     : QueryDeviceConfigFlags.OnlyActivePaths,
                 out _
             );
