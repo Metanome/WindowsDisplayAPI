@@ -10,13 +10,15 @@
     <Platforms>AnyCPU</Platforms>
     <Product>WindowsDisplayAPI</Product>
     <PackageProjectUrl>https://github.com/falahati/WindowsDisplayAPI</PackageProjectUrl>
-    <PackageLicenseUrl>https://github.com/falahati/WindowsDisplayAPI/blob/master/LICENSE</PackageLicenseUrl>
-    <PackageIconUrl>https://github.com/falahati/WindowsDisplayAPI/blob/master/WindowsDisplayAPI/Icon.png?raw=true</PackageIconUrl>
+    <PackageLicenseExpression>LGPL-3.0-only</PackageLicenseExpression>
+    <PackageIcon>Icon.png</PackageIcon>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
     <IncludeSymbols>true</IncludeSymbols>
     <IncludeSource>true</IncludeSource>
     <PlatformTarget>AnyCPU</PlatformTarget>
     <Title>Windows Display API Wrapper (CCD)</Title>
     <PackageId>LLT.WindowsDisplayAPI</PackageId>
+    <NoWarn>$(NoWarn);1591</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <OutputPath>..\Debug</OutputPath>
@@ -36,6 +38,10 @@
       <Pack>true</Pack>
       <PackagePath>\</PackagePath>
     </Content>
+    <None Include="..\README.md">
+      <Pack>true</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
   <ItemGroup Condition="'$(TargetFramework)' == 'net45'">
     <Reference Include="System.Windows.Forms" />
