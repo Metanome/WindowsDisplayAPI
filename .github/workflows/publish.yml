@@ -1,0 +1,31 @@
+name: Publish NuGet Package
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  publish:
+    name: Build, Pack, and Publish
+    runs-on: windows-latest
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Restore Dependencies
+        run: dotnet restore WindowsDisplay.sln
+
+      - name: Build and Pack
+        run: dotnet pack WindowsDisplayAPI/WindowsDisplayAPI.csproj -c Release
+
+      - name: Push to NuGet.org
+        run: dotnet nuget push Release\*.nupkg --source https://api.nuget.org/v3/index.json --skip-duplicate

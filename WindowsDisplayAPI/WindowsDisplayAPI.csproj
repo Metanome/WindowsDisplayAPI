@@ -1,11 +1,11 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;net45</TargetFrameworks>
     <Version>1.3.0.13</Version>
     <Company>falahati.net</Company>
     <Description>WindowsDisplayAPI is a .Net wrapper for Windows Display and Windows CCD APIs</Description>
-    <Authors>Soroush Falahati</Authors>
+    <Authors>Soroush Falahati, Metanome</Authors>
     <Copyright>Copyright © Soroush Falahati 2020 (falahati.net)</Copyright>
     <Platforms>AnyCPU</Platforms>
     <Product>WindowsDisplayAPI</Product>
@@ -16,7 +16,7 @@
     <IncludeSource>true</IncludeSource>
     <PlatformTarget>AnyCPU</PlatformTarget>
     <Title>Windows Display API Wrapper (CCD)</Title>
-    <PackageId>WindowsDisplayAPI</PackageId>
+    <PackageId>LLT.WindowsDisplayAPI</PackageId>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <BumpLabel>dev</BumpLabel>

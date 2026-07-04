@@ -1,4 +1,8 @@
 # WindowsDisplayAPI
+
+> [!NOTE]
+> This is a modified fork of the original [WindowsDisplayAPI](https://github.com/falahati/WindowsDisplayAPI) library maintained for the [Lenovo Legion Toolkit](https://github.com/LenovoLegionToolkit-Team/LenovoLegionToolkit) project.
+
 [![](https://img.shields.io/github/license/falahati/WindowsDisplayAPI.svg?style=flat-square)](https://github.com/falahati/WindowsDisplayAPI/blob/master/LICENSE)
 [![](https://img.shields.io/github/commit-activity/y/falahati/WindowsDisplayAPI.svg?style=flat-square)](https://github.com/falahati/WindowsDisplayAPI/commits/master)
 [![](https://img.shields.io/github/issues/falahati/WindowsDisplayAPI.svg?style=flat-square)](https://github.com/falahati/WindowsDisplayAPI/issues)
@@ -6,10 +10,10 @@
 WindowsDisplayAPI is a .Net wrapper for Windows Display and Windows CCD APIs
 
 ## How to get
-[![](https://img.shields.io/nuget/dt/WindowsDisplayAPI.svg?style=flat-square)](https://www.nuget.org/packages/WindowsDisplayAPI)
-[![](https://img.shields.io/nuget/v/WindowsDisplayAPI.svg?style=flat-square)](https://www.nuget.org/packages/WindowsDisplayAPI)
+[![](https://img.shields.io/nuget/dt/LLT.WindowsDisplayAPI.svg?style=flat-square)](https://www.nuget.org/packages/LLT.WindowsDisplayAPI)
+[![](https://img.shields.io/nuget/v/LLT.WindowsDisplayAPI.svg?style=flat-square)](https://www.nuget.org/packages/LLT.WindowsDisplayAPI)
 
-To download the latest version of this library, take a look at the library's [NuGet page](https://www.nuget.org/packages/WindowsDisplayAPI).
+To download the latest version of this library, take a look at the library's [NuGet page](https://www.nuget.org/packages/LLT.WindowsDisplayAPI).
 
 ## Help me fund my own Death Star
 
