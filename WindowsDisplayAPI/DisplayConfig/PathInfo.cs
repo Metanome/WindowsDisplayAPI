@@ -806,7 +806,8 @@ namespace WindowsDisplayAPI.DisplayConfig
                 var displayPath = displayPaths[i];
                 DisplayConfigSourceMode? sourceMode = null;
                 var key = sourceId;
-                var isVirtualSupported = displayPath.Flags.HasFlag(DisplayConfigPathInfoFlags.SupportVirtualMode);
+                var isVirtualSupported = displayPath.Flags.HasFlag(DisplayConfigPathInfoFlags.SupportVirtualMode) ||
+                                         displayPath.Flags.HasFlag(DisplayConfigPathInfoFlags.BoostRefreshRate);
 
                 if (isVirtualSupported &&
                     displayPath.SourceInfo.SourceModeInfoIndex != DisplayConfigSourceMode.InvalidSourceModeIndex &&
