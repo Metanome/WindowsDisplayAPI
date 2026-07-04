@@ -648,6 +648,11 @@ namespace WindowsDisplayAPI.DisplayConfig
                             flags |= DisplayConfigPathInfoFlags.SupportVirtualMode;
                         }
 
+                        if (target.IsBoostRefreshRate)
+                        {
+                            flags |= DisplayConfigPathInfoFlags.BoostRefreshRate;
+                        }
+
                         var targetMode = target.GetDisplayConfigTargetMode();
                         var targetModeIndex = targetMode.HasValue
                             ? AddMode(ref displayConfigModeInfos,

@@ -1,4 +1,4 @@
-﻿using System.Runtime.InteropServices;
+using System.Runtime.InteropServices;
 using WindowsDisplayAPI.Native.Structures;
 
 namespace WindowsDisplayAPI.Native.DisplayConfig.Structures
@@ -20,12 +20,12 @@ namespace WindowsDisplayAPI.Native.DisplayConfig.Structures
 
         public ushort TargetModeInfoIndex
         {
-            get => (ushort) ((ModeInfoIndex << 16) >> 16);
+            get => (ushort) (ModeInfoIndex >> 16);
         }
 
         public ushort DesktopModeInfoIndex
         {
-            get => (ushort) (ModeInfoIndex >> 16);
+            get => (ushort) ((ModeInfoIndex << 16) >> 16);
         }
 
         public DisplayConfigPathTargetInfo(
@@ -65,7 +65,7 @@ namespace WindowsDisplayAPI.Native.DisplayConfig.Structures
                 adapterId, targetId, 0, outputTechnology, rotation, scaling, refreshRate, scanLineOrdering,
                 targetAvailable)
         {
-            ModeInfoIndex = (uint) (targetModeInfoIndex + (desktopModeInfoIndex << 16));
+            ModeInfoIndex = (uint) (desktopModeInfoIndex + (targetModeInfoIndex << 16));
         }
     }
 }

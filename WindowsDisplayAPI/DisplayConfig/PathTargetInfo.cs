@@ -73,12 +73,14 @@ namespace WindowsDisplayAPI.DisplayConfig
         /// <param name="rotation">Display rotation</param>
         /// <param name="scaling">Display scaling</param>
         /// <param name="isVirtualModeSupported">A boolean value indicating the target virtual mode support</param>
+        /// <param name="isBoostRefreshRate">A boolean value indicating if dynamic refresh rate boost is enabled</param>
         public PathTargetInfo(
             PathDisplayTarget displayTarget,
             PathTargetSignalInfo signalInfo,
             DisplayConfigRotation rotation = DisplayConfigRotation.NotSpecified,
             DisplayConfigScaling scaling = DisplayConfigScaling.Preferred,
-            bool isVirtualModeSupported = false
+            bool isVirtualModeSupported = false,
+            bool isBoostRefreshRate = false
         ) : this(
             displayTarget,
             0,
@@ -92,6 +94,7 @@ namespace WindowsDisplayAPI.DisplayConfig
             FrequencyInMillihertz = signalInfo.VerticalSyncFrequencyInMillihertz;
             ScanLineOrdering = signalInfo.ScanLineOrdering;
             IsSignalInformationAvailable = true;
+            IsBoostRefreshRate = isBoostRefreshRate;
         }
 
         /// <summary>
