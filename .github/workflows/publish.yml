@@ -27,8 +27,14 @@ jobs:
       - name: Build and Pack
         run: dotnet build WindowsDisplay.sln -c Release
 
+      - name: NuGet login
+        uses: NuGet/login@v1
+        id: login
+        with:
+          user: Metanome
+
       - name: Push to NuGet.org
-        run: dotnet nuget push Release\*.nupkg --source https://api.nuget.org/v3/index.json --skip-duplicate
+        run: dotnet nuget push Release\*.nupkg --source https://api.nuget.org/v3/index.json --skip-duplicate --api-key ${{ steps.login.outputs.NUGET_API_KEY }}
 
       - name: Upload to GitHub Release
         uses: softprops/action-gh-release@v2
