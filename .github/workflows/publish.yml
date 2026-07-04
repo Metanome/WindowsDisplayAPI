@@ -25,7 +25,7 @@ jobs:
         run: dotnet restore WindowsDisplay.sln
 
       - name: Build and Pack
-        run: dotnet pack WindowsDisplayAPI/WindowsDisplayAPI.csproj -c Release
+        run: dotnet build WindowsDisplay.sln -c Release
 
       - name: Push to NuGet.org
         run: dotnet nuget push Release\*.nupkg --source https://api.nuget.org/v3/index.json --skip-duplicate
