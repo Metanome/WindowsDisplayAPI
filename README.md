@@ -11,8 +11,6 @@
 
 **WindowsDisplayAPI** is a lightweight .NET wrapper for the Windows Display and Connecting and Configuring Displays (CCD) APIs. It enables developers to query, configure, and manage display topologies, resolutions, refresh rates, and scaling settings programmatically.
 
----
-
 ## Installation
 
 The library is available on NuGet. You can install it using the NuGet Package Manager Console:
@@ -22,8 +20,6 @@ dotnet add package LLT.WindowsDisplayAPI
 ```
 
 For more details, visit the [LLT.WindowsDisplayAPI NuGet Page](https://www.nuget.org/packages/LLT.WindowsDisplayAPI).
-
----
 
 ## Sponsorship & Funding
 
@@ -41,15 +37,11 @@ Support the original creator and author of the library, Soroush Falahati:
 
 *Your contributions, bug reports, and pull requests are always welcome.*
 
----
-
 ## Related Projects
 
 * [**NvAPIWrapper**](https://github.com/falahati/NvAPIWrapper/): A .NET wrapper for the NVIDIA public API, allowing detailed display and GPU management on NVIDIA systems.
 * [**EDIDParser**](https://github.com/falahati/EDIDParser/): A helper library designed to parse and extract hardware information from raw EDID binary structures.
 * [**HeliosDisplayManagement**](https://github.com/falahati/HeliosDisplayManagement/): An open-source display profile manager for Windows supporting NVIDIA Surround configurations.
-
----
 
 ## License
 
