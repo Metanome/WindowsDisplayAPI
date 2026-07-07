@@ -9,7 +9,9 @@
     <Copyright>Copyright © Soroush Falahati 2020 (falahati.net)</Copyright>
     <Platforms>AnyCPU</Platforms>
     <Product>WindowsDisplayAPI</Product>
-    <PackageProjectUrl>https://github.com/falahati/WindowsDisplayAPI</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/Metanome/WindowsDisplayAPI</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Metanome/WindowsDisplayAPI</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
     <PackageLicenseExpression>LGPL-3.0-only</PackageLicenseExpression>
     <PackageIcon>Icon.png</PackageIcon>
     <PackageReadmeFile>README.md</PackageReadmeFile>

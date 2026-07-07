@@ -3,38 +3,58 @@
 > [!NOTE]
 > This is a modified fork of the original [WindowsDisplayAPI](https://github.com/falahati/WindowsDisplayAPI) library maintained for the [Lenovo Legion Toolkit](https://github.com/LenovoLegionToolkit-Team/LenovoLegionToolkit) project.
 
-[![](https://img.shields.io/github/license/falahati/WindowsDisplayAPI.svg?style=flat-square)](https://github.com/falahati/WindowsDisplayAPI/blob/master/LICENSE)
-[![](https://img.shields.io/github/commit-activity/y/falahati/WindowsDisplayAPI.svg?style=flat-square)](https://github.com/falahati/WindowsDisplayAPI/commits/master)
-[![](https://img.shields.io/github/issues/falahati/WindowsDisplayAPI.svg?style=flat-square)](https://github.com/falahati/WindowsDisplayAPI/issues)
+[![NuGet Version](https://img.shields.io/nuget/v/LLT.WindowsDisplayAPI.svg?style=flat-square)](https://www.nuget.org/packages/LLT.WindowsDisplayAPI)
+[![NuGet Downloads](https://img.shields.io/nuget/dt/LLT.WindowsDisplayAPI.svg?style=flat-square)](https://www.nuget.org/packages/LLT.WindowsDisplayAPI)
+[![License](https://img.shields.io/github/license/Metanome/WindowsDisplayAPI.svg?style=flat-square)](https://github.com/Metanome/WindowsDisplayAPI/blob/master/LICENSE)
+[![Commit Activity](https://img.shields.io/github/commit-activity/y/Metanome/WindowsDisplayAPI.svg?style=flat-square)](https://github.com/Metanome/WindowsDisplayAPI/commits/master)
+[![Issues](https://img.shields.io/github/issues/Metanome/WindowsDisplayAPI.svg?style=flat-square)](https://github.com/Metanome/WindowsDisplayAPI/issues)
 
-WindowsDisplayAPI is a .Net wrapper for Windows Display and Windows CCD APIs
+**WindowsDisplayAPI** is a lightweight .NET wrapper for the Windows Display and Connecting and Configuring Displays (CCD) APIs. It enables developers to query, configure, and manage display topologies, resolutions, refresh rates, and scaling settings programmatically.
 
-## How to get
-[![](https://img.shields.io/nuget/dt/LLT.WindowsDisplayAPI.svg?style=flat-square)](https://www.nuget.org/packages/LLT.WindowsDisplayAPI)
-[![](https://img.shields.io/nuget/v/LLT.WindowsDisplayAPI.svg?style=flat-square)](https://www.nuget.org/packages/LLT.WindowsDisplayAPI)
+---
 
-To download the latest version of this library, take a look at the library's [NuGet page](https://www.nuget.org/packages/LLT.WindowsDisplayAPI).
+## Installation
 
-## Help me fund my own Death Star
+The library is available on NuGet. You can install it using the NuGet Package Manager Console:
 
-[![](https://img.shields.io/badge/crypto-CoinPayments-8a00a3.svg?style=flat-square)](https://www.coinpayments.net/index.php?cmd=_donate&reset=1&merchant=820707aded07845511b841f9c4c335cd&item_name=Donate&currency=USD&amountf=20.00000000&allow_amount=1&want_shipping=0&allow_extra=1)
-[![](https://img.shields.io/badge/shetab-ZarinPal-8a00a3.svg?style=flat-square)](https://zarinp.al/@falahati)
-[![](https://img.shields.io/badge/usd-Paypal-8a00a3.svg?style=flat-square)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=ramin.graphix@gmail.com&lc=US&item_name=Donate&no_note=0&cn=&curency_code=USD&bn=PP-DonationsBF:btn_donateCC_LG.gif:NonHosted)
+```shell
+dotnet add package LLT.WindowsDisplayAPI
+```
 
-**--OR--**
+For more details, visit the [LLT.WindowsDisplayAPI NuGet Page](https://www.nuget.org/packages/LLT.WindowsDisplayAPI).
 
-You can always donate your time by contributing to the project or by introducing it to others.
+---
+
+## Sponsorship & Funding
+
+If you find this library useful, please consider supporting the project and its authors:
+
+### Project Maintainer
+Support the active maintainer of this fork:
+* [**Sponsor Metanome on GitHub**](https://github.com/sponsors/Metanome)
+
+### Original Author
+Support the original creator and author of the library, Soroush Falahati:
+* [**CoinPayments (Crypto)**](https://www.coinpayments.net/index.php?cmd=_donate&reset=1&merchant=820707aded07845511b841f9c4c335cd&item_name=Donate&currency=USD&amountf=20.00000000&allow_amount=1&want_shipping=0&allow_extra=1)
+* [**ZarinPal**](https://zarinp.al/@falahati)
+* [**PayPal (USD)**](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=ramin.graphix@gmail.com&lc=US&item_name=Donate&no_note=0&cn=&curency_code=USD&bn=PP-DonationsBF:btn_donateCC_LG.gif:NonHosted)
+
+*Your contributions, bug reports, and pull requests are always welcome.*
+
+---
 
 ## Related Projects
 
-- [**NvAPIWrapper**](https://github.com/falahati/NvAPIWrapper/): NvAPIWrapper is a .Net wrapper for NVIDIA public API, capable of managing all aspects of a display setup using NVIDIA GPUs
+* [**NvAPIWrapper**](https://github.com/falahati/NvAPIWrapper/): A .NET wrapper for the NVIDIA public API, allowing detailed display and GPU management on NVIDIA systems.
+* [**EDIDParser**](https://github.com/falahati/EDIDParser/): A helper library designed to parse and extract hardware information from raw EDID binary structures.
+* [**HeliosDisplayManagement**](https://github.com/falahati/HeliosDisplayManagement/): An open-source display profile manager for Windows supporting NVIDIA Surround configurations.
 
-- [**EDIDParser**](https://github.com/falahati/EDIDParser/): EDIDParser is a library allowing all .Net developers to parse and to extract information from raw EDID binary data. (Extended Display Identification Data)
-
-- [**HeliosDisplayManagement**](https://github.com/falahati/HeliosDisplayManagement/): An open source display profile management program for Windows with support for NVIDIA Surround
+---
 
 ## License
-Copyright (C) 2017-2020 Soroush Falahati
 
-This project is licensed under the GNU Lesser General Public License ("LGPL") and therefore can be used in closed source or commercial projects. 
-However, any commit or change to the main code must be public and there should be a read me file along with the DLL clarifying the license and its terms as part of your project as well as a hyperlink to this repository. [Read more about LGPL](LICENSE).
+Copyright (C) 2017-2020 Soroush Falahati.
+
+This project is licensed under the **GNU Lesser General Public License (LGPL-3.0)**, which allows for use in closed-source or commercial projects.
+
+Per the license terms, any modifications to the core library code must be made public. Refer to the [LICENSE](LICENSE) file for the full text of the license.
