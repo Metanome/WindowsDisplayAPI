@@ -1,4 +1,4 @@
-﻿using System.Runtime.InteropServices;
+using System.Runtime.InteropServices;
 using WindowsDisplayAPI.Native.Structures;
 
 namespace WindowsDisplayAPI.Native.DisplayConfig.Structures
@@ -16,12 +16,12 @@ namespace WindowsDisplayAPI.Native.DisplayConfig.Structures
 
         public ushort SourceModeInfoIndex
         {
-            get => (ushort) ((ModeInfoIndex << 16) >> 16);
+            get => (ushort) (ModeInfoIndex >> 16);
         }
 
         public ushort CloneGroupId
         {
-            get => (ushort) (ModeInfoIndex >> 16);
+            get => (ushort) ((ModeInfoIndex << 16) >> 16);
         }
 
         public DisplayConfigPathSourceInfo(LUID adapterId, uint sourceId, uint modeInfoIndex) : this()
@@ -37,7 +37,7 @@ namespace WindowsDisplayAPI.Native.DisplayConfig.Structures
             ushort sourceModeInfoIndex,
             ushort cloneGroupId) : this(adapterId, sourceId, 0)
         {
-            ModeInfoIndex = (uint) (sourceModeInfoIndex + (cloneGroupId << 16));
+            ModeInfoIndex = (uint) (cloneGroupId + (sourceModeInfoIndex << 16));
         }
     }
 }

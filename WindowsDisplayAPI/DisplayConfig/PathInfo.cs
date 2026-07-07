@@ -389,6 +389,12 @@ namespace WindowsDisplayAPI.DisplayConfig
                 flags |= SetDisplayConfigFlags.NoOptimization;
             }
 
+            if (HasVirtualPaths(pathInfosArray))
+            {
+                flags |= SetDisplayConfigFlags.VirtualModeAware;
+                flags |= SetDisplayConfigFlags.VirtualRefreshRateAware;
+            }
+
             if (saveToDatabase && displayConfigModeInfos.Length > 0)
             {
                 flags |= SetDisplayConfigFlags.SaveToDatabase;
@@ -529,15 +535,21 @@ namespace WindowsDisplayAPI.DisplayConfig
                     : SetDisplayConfigFlags.AllowChanges;
             }
 
-            return
-                DisplayConfigApi.SetDisplayConfig(
-                    (uint) displayConfigPathInfos.Length,
-                    displayConfigPathInfos,
-                    (uint) displayConfigModeInfos.Length,
-                    displayConfigModeInfos.Length > 0 ? displayConfigModeInfos : null,
-                    SetDisplayConfigFlags.Validate | flags
-                ) ==
-                Win32Status.Success;
+            if (HasVirtualPaths(pathInfos))
+            {
+                flags |= SetDisplayConfigFlags.VirtualModeAware;
+                flags |= SetDisplayConfigFlags.VirtualRefreshRateAware;
+            }
+
+            var resultStatus = DisplayConfigApi.SetDisplayConfig(
+                (uint) displayConfigPathInfos.Length,
+                displayConfigPathInfos,
+                (uint) displayConfigModeInfos.Length,
+                displayConfigModeInfos.Length > 0 ? displayConfigModeInfos : null,
+                SetDisplayConfigFlags.Validate | flags
+            );
+
+            return resultStatus == Win32Status.Success;
         }
 
         /// <summary>
@@ -563,6 +575,14 @@ namespace WindowsDisplayAPI.DisplayConfig
                        SetDisplayConfigFlags.Validate | flags
                    ) ==
                    Win32Status.Success;
+        }
+
+        private static bool HasVirtualPaths(IEnumerable<PathInfo> pathInfos)
+        {
+            return pathInfos.Any(
+                path => path.TargetsInfo != null &&
+                        path.TargetsInfo.Any(target => target.IsVirtualModeSupportedByPath || target.IsBoostRefreshRate)
+            );
         }
 
         private static uint AddMode(ref List<DisplayConfigModeInfo> modes, DisplayConfigModeInfo mode)

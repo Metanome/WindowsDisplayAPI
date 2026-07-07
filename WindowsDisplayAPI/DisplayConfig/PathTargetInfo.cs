@@ -74,13 +74,15 @@ namespace WindowsDisplayAPI.DisplayConfig
         /// <param name="scaling">Display scaling</param>
         /// <param name="isVirtualModeSupported">A boolean value indicating the target virtual mode support</param>
         /// <param name="isBoostRefreshRate">A boolean value indicating if dynamic refresh rate boost is enabled</param>
+        /// <param name="virtualFrequencyInMillihertz">The virtual frequency in millihertz</param>
         public PathTargetInfo(
             PathDisplayTarget displayTarget,
             PathTargetSignalInfo signalInfo,
             DisplayConfigRotation rotation = DisplayConfigRotation.NotSpecified,
             DisplayConfigScaling scaling = DisplayConfigScaling.Preferred,
             bool isVirtualModeSupported = false,
-            bool isBoostRefreshRate = false
+            bool isBoostRefreshRate = false,
+            ulong virtualFrequencyInMillihertz = 0
         ) : this(
             displayTarget,
             0,
@@ -91,7 +93,9 @@ namespace WindowsDisplayAPI.DisplayConfig
         )
         {
             _signalInfo = signalInfo;
-            FrequencyInMillihertz = signalInfo.VerticalSyncFrequencyInMillihertz;
+            FrequencyInMillihertz = virtualFrequencyInMillihertz > 0
+                ? virtualFrequencyInMillihertz
+                : signalInfo.VerticalSyncFrequencyInMillihertz;
             ScanLineOrdering = signalInfo.ScanLineOrdering;
             IsSignalInformationAvailable = true;
             IsBoostRefreshRate = isBoostRefreshRate;
@@ -124,14 +128,17 @@ namespace WindowsDisplayAPI.DisplayConfig
         /// <param name="rotation">Display rotation</param>
         /// <param name="scaling">Display scaling</param>
         /// <param name="isVirtualModeSupported">A boolean value indicating the target virtual mode support</param>
+        /// <param name="isBoostRefreshRate">A boolean value indicating if dynamic refresh rate boost is enabled</param>
         public PathTargetInfo(
             PathDisplayTarget displayTarget,
             PathTargetSignalInfo signalInfo,
             PathTargetDesktopImage desktopImage,
             DisplayConfigRotation rotation = DisplayConfigRotation.NotSpecified,
             DisplayConfigScaling scaling = DisplayConfigScaling.Preferred,
-            bool isVirtualModeSupported = false
-        ) : this(displayTarget, signalInfo, rotation, scaling, isVirtualModeSupported)
+            bool isVirtualModeSupported = false,
+            bool isBoostRefreshRate = false,
+            ulong virtualFrequencyInMillihertz = 0
+        ) : this(displayTarget, signalInfo, rotation, scaling, isVirtualModeSupported, isBoostRefreshRate, virtualFrequencyInMillihertz)
         {
             _desktopImage = desktopImage;
             IsDesktopImageInformationAvailable = true;

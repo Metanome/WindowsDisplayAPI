@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace WindowsDisplayAPI.Native.DisplayConfig
 {
@@ -20,6 +20,7 @@ namespace WindowsDisplayAPI.Native.DisplayConfig
         PathPersistIfRequired = 0x00000800,
         ForceModeEnumeration = 0x00001000,
         AllowPathOrderChanges = 0x00002000,
-        VirtualModeAware = 0x00008000
+        VirtualModeAware = 0x00008000,
+        VirtualRefreshRateAware = 0x00020000
     }
 }
