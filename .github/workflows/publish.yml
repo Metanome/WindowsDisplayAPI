@@ -24,8 +24,16 @@ jobs:
       - name: Restore Dependencies
         run: dotnet restore WindowsDisplay.sln
 
+      - name: Extract version
+        id: get_version
+        run: |
+          $tag = "${{ github.ref_name }}"
+          $version = $tag -replace '^v', ''
+          echo "version=$version" >> $env:GITHUB_OUTPUT
+        shell: powershell
+
       - name: Build and Pack
-        run: dotnet build WindowsDisplay.sln -c Release
+        run: dotnet build WindowsDisplay.sln -c Release /p:Version=${{ steps.get_version.outputs.version }}
 
       - name: NuGet login
         uses: NuGet/login@v1
