@@ -6,7 +6,7 @@ Windows Display and Windows CCD functionalities.
 
 For more  information about this  library,  please check out
 our GitHub page:
-https://github.com/Metanome/WindowsDisplayAPI
+https://github.com/LenovoLegionToolkit-Team/WindowsDisplayAPI
 
 
 2017 Soroush Falahati (https://falahati.net)

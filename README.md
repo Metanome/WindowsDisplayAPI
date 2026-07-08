@@ -5,9 +5,9 @@
 
 [![NuGet Version](https://img.shields.io/nuget/v/LLT.WindowsDisplayAPI.svg?style=flat-square)](https://www.nuget.org/packages/LLT.WindowsDisplayAPI)
 [![NuGet Downloads](https://img.shields.io/nuget/dt/LLT.WindowsDisplayAPI.svg?style=flat-square)](https://www.nuget.org/packages/LLT.WindowsDisplayAPI)
-[![License](https://img.shields.io/github/license/Metanome/WindowsDisplayAPI.svg?style=flat-square)](https://github.com/Metanome/WindowsDisplayAPI/blob/master/LICENSE)
-[![Commit Activity](https://img.shields.io/github/commit-activity/y/Metanome/WindowsDisplayAPI.svg?style=flat-square)](https://github.com/Metanome/WindowsDisplayAPI/commits/master)
-[![Issues](https://img.shields.io/github/issues/Metanome/WindowsDisplayAPI.svg?style=flat-square)](https://github.com/Metanome/WindowsDisplayAPI/issues)
+[![License](https://img.shields.io/github/license/LenovoLegionToolkit-Team/WindowsDisplayAPI.svg?style=flat-square)](https://github.com/LenovoLegionToolkit-Team/WindowsDisplayAPI/blob/master/LICENSE)
+[![Commit Activity](https://img.shields.io/github/commit-activity/y/LenovoLegionToolkit-Team/WindowsDisplayAPI.svg?style=flat-square)](https://github.com/LenovoLegionToolkit-Team/WindowsDisplayAPI/commits/master)
+[![Issues](https://img.shields.io/github/issues/LenovoLegionToolkit-Team/WindowsDisplayAPI.svg?style=flat-square)](https://github.com/LenovoLegionToolkit-Team/WindowsDisplayAPI/issues)
 
 **WindowsDisplayAPI** is a lightweight .NET wrapper for the Windows Display and Connecting and Configuring Displays (CCD) APIs. It enables developers to query, configure, and manage display topologies, resolutions, refresh rates, and scaling settings programmatically.
 
